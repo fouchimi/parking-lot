@@ -11,11 +11,14 @@
 	  $scope.appTitle = "[Pack] Parking";
 	  $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];     
 	  $scope.cars = [];
+	  $scope.car = {};     
 	  $scope.park = function(car) {
-             car.entrance = new Date();
+             car.entrance = new Date();		  
              $scope.cars.push(car);		  
-             delete $scope.car;		  
 	  }
+	 $scope.select = function() {
+	   console.log($scope.car.selected);	
+	 }      
        });
      </script>
   </head>
@@ -32,10 +35,10 @@
        </thead>
        <tbody>
 	 <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
-	   <td><input type="checkbox" ng-model="car.selected" /></td>
+	   <td><input type="checkbox" ng-click="select(car)"  ng-model="car.selected" /></td>
            <td><span ng-bind="car.plate"></span></td>
            <td><span ng-bind="car.entrance"></span></td>
-	   <td><span ng-bind="car.color"></span></td>
+	   <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
 	 </tr>
        </tbody>
     </table>
