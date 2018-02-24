@@ -8,7 +8,8 @@ angular.module("parking", [])
         car.entrance = new Date();		  
         $scope.cars.push(car);
 	$scope.car.plate = "";
-        $scope.entrance = "";  	     
+        $scope.entrance = ""; 
+	$scope.color = "";     
      } 
      $scope.select = function() {
 	 console.log($scope.car.selected);	

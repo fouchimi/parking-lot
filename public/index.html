@@ -8,7 +8,10 @@
      <script src="js/directives/directives.js"></script>
   </head>
   <body>
-    <alert></alert>
+    <alert 
+        topic="Something went wrong"
+        description="You must inform the plate and the color of the car!" >
+    </alert>
     <div ng-controller="parkingCtrl">
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
