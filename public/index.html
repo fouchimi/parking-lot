@@ -8,19 +8,10 @@
        var parking = angular.module("parking", []);
        parking.controller("parkingCtrl", function($scope){
 	  $scope.appTitle = "[Pack] Parking";      
-	  $scope.cars = [
-	    { plate: '6MBV006',
-	      entrance: ''
-	    },
-            { plate: '5BBM299',
-	      entrance: ''
-	    },
-	    { plate: '5AOH230',
-	      entrance: ''
-	    }
-	  ];
+	  $scope.cars = [];
 	  $scope.park = function(car) {
-             $scope.cars.push(angular.copy(car));
+             car.entrance = new Date();
+             $scope.cars.push(car);		  
              delete $scope.car;		  
 	  }
        });
