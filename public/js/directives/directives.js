@@ -5,8 +5,8 @@ angular.module("parking")
      replace: true,
      restrict: 'EAM',
      scope: {
-        topic: "@topic",
-	description: "@description"     
+        topic: "=topic",
+	description: "=description"     
      }
    }
  });

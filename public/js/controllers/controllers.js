@@ -3,7 +3,9 @@ angular.module("parking", [])
      $scope.appTitle = "[Pack] Parking";
      $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];     
      $scope.cars = [];
-     $scope.car = {};     
+     $scope.car = {};    
+     $scope.alertTopic = "Something went wrong";
+     $scope.alertMessage = "You must inform the plate and the color of the car!"
      $scope.park = function(car) {
         car.entrance = new Date();		  
         $scope.cars.push(car);
