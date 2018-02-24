@@ -3,6 +3,6 @@ angular.module("parking")
    return {
      templateUrl: "../../views/alert.html",
      replace: true,
-     restrict: 'EAC'	   
+     restrict: 'EACM'	   
    }
  });

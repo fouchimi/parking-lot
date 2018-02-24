@@ -4,38 +4,39 @@
      <title>Parking</title>
      <link rel="stylesheet" href="css/main.css"></link>
      <script src="bower_components/angular/angular.js"></script>
-     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
      <script src="js/controllers/controllers.js"></script>
      <script src="js/directives/directives.js"></script>
   </head>
-  <body ng-controller="parkingCtrl">
+  <body>
     <alert></alert>
-    <h3 ng-bind="appTitle"></h3>
-    <div ng-show="cars.length > 0">
-      <table>
-       <thead>
-          <tr>
-              <th></th>		  
-              <th>Plate</th>
-	      <th>Entrance</th>
-	      <th>Color</th>
-	  </tr>
-       </thead>
-       <tbody>
-	 <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
-	   <td><input type="checkbox" ng-click="select(car)"  ng-model="car.selected" /></td>
-           <td><span ng-bind="car.plate"></span></td>
-           <td><span ng-bind="car.entrance"></span></td>
-	   <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
-	 </tr>
-       </tbody>
-      </table>
-    </div>
+    <div ng-controller="parkingCtrl">
+       <h3 ng-bind="appTitle"></h3>
+       <div ng-show="cars.length > 0">
+          <table>
+             <thead>
+               <tr>
+                 <th></th>		  
+                 <th>Plate</th>
+	         <th>Entrance</th>
+	         <th>Color</th>
+	      </tr>
+            </thead>
+            <tbody>
+	      <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
+	        <td><input type="checkbox" ng-click="select(car)"  ng-model="car.selected" /></td>
+                <td><span ng-bind="car.plate"></span></td>
+                <td><span ng-bind="car.entrance"></span></td>
+	        <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
+	     </tr>
+           </tbody>
+         </table>
+       </div>
     <div ng-hide = "cars.length > 0">
        <span>The parking lot is empty</span>
     </div>
     <input type="text" ng-model="car.plate" placeholder="What's the plate" />
     <select ng-model="car.color" ng-options="color for color in colors"></select>
-    <button ng-click="park(car)" ng-disable="!car.plate || !car.color">Park</button>  
+    <button ng-click="park(car)" ng-disable="!car.plate || !car.color">Park</button> 
+    </div>
   </body>
 </html>
