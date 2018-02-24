@@ -6,6 +6,7 @@
      <script type="text/javascript">
        var parking = angular.module("parking", []);
        parking.controller("parkingCtrl", function($scope){
+	  $scope.appTitle = "[Pack] Parking";      
 	  $scope.cars = [
 	    {plate: '6MBV006'},
             {plate: '5BBM299'},
@@ -19,7 +20,7 @@
      </script>
   </head>
   <body ng-controller="parkingCtrl">
-    <h3 ng-bind="[Pack] Parking"></h3>
+    <h3 ng-bind="appTitle"></h3>
     <table>
        <thead>
           <tr><th>Plate</th></tr>
