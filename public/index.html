@@ -5,22 +5,7 @@
      <link rel="stylesheet" href="css/main.css"></link>
      <script src="bower_components/angular/angular.js"></script>
      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-     <script type="text/javascript">
-       var parking = angular.module("parking", []);
-       parking.controller("parkingCtrl", function($scope){
-	  $scope.appTitle = "[Pack] Parking";
-	  $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];     
-	  $scope.cars = [];
-	  $scope.car = {};     
-	  $scope.park = function(car) {
-             car.entrance = new Date();		  
-             $scope.cars.push(car);		  
-	  }
-	 $scope.select = function() {
-	   console.log($scope.car.selected);	
-	 }      
-       });
-     </script>
+     <script src="js/controllers/controllers.js"></script>
   </head>
   <body ng-controller="parkingCtrl">
     <h3 ng-bind="appTitle"></h3>
