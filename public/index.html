@@ -2,6 +2,7 @@
 <html ng-app="parking">
   <head>	  
      <title>Parking</title>
+     <link rel="stylesheet" href="css/main.css"></link>
      <script src="bower_components/angular/angular.js"></script>
      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
      <script type="text/javascript">
@@ -22,13 +23,15 @@
     <table>
        <thead>
           <tr>
+              <th></th>		  
               <th>Plate</th>
 	      <th>Entrance</th>
 	  </tr>
        </thead>
        <tbody>
-         <tr ng-repeat="car in cars">
-	   <td><span ng-bind="car.plate"></span></td>
+	 <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
+	   <td><input type="checkbox" ng-model="car.selected" /></td>
+           <td><span ng-bind="car.plate"></span></td>
            <td><span ng-bind="car.entrance"></span></td>
 	 </tr>
        </tbody>
