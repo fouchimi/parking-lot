@@ -1,5 +1,5 @@
 angular.module("parking", [])
-  .controller("parkingCtrl", ["$scope","$filter", function($scope, $filter){
+  .controller("parkingCtrl", ["$scope","$filter", "parkingService", function($scope, $filter, parkingService){
      $scope.appTitle = $filter("uppercase")("[Pack] Parking");
      $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];     
      $scope.cars = [];
@@ -10,6 +10,11 @@ angular.module("parking", [])
         $scope.cars.push(car);
 	delete $scope.car;     
      } 
+     
+     $scope.calculateTicket = function(car) {
+        $scope.ticket = parkingService.calculateTicket(car);
+     }	  
+	  
      $scope.closeAlert = function() {
         $scope.showAlert = false;
      }
