@@ -41,7 +41,7 @@
 	      <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
 	        <td><input type="checkbox"  ng-model="car.selected" /></td>
 		<td><span>{{car.plate}}</span></td>
-		<td><span>{{car.entrance}}</span></td>
+		<td><span>{{car.entrance | date }}</span></td>
 		<td><span ng-style="{color: car.color}">{{car.color}}</span></td>
 	     </tr>
            </tbody>
