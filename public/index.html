@@ -29,7 +29,13 @@
        </accordion>
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
-	  <input type="text" ng-model="criteria" placeholder="What are you looking for"/>     
+	  <form name="carForm"> 
+             <input 
+	        type="text" 
+		ng-model="criteria"
+                name="plateField"
+		placeholder="What are you looking for"/>
+	  </form>
           <table>
              <thead>
                <tr>
