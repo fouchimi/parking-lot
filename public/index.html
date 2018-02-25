@@ -9,12 +9,23 @@
   </head>
   <body>
      <div ng-controller="parkingCtrl">
-	<alert 
+       <alert 
 	   ng-show="showAlert"
            topic="Something went wrong!"
 	   close="closeAlert()">
 	   You must inform the plate and the color of the car!
-        </alert>
+       </alert>
+       <accordion>
+	 <accordion-item title="MMM-8790">
+	    White - 10/10/2002 10:00 		
+	 </accordion-item>
+	 <accordion-item title="ABC-9954">
+	    Black - 10/10/2002 10:36		
+	 </accordion-item>
+	 <accordion-item title="XYZ-9768">
+	    Blue - 10/10/2002 11:10 		
+	 </accordion-item>
+       </accordion>
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
           <table>
