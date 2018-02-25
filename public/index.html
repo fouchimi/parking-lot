@@ -65,7 +65,7 @@
        ng-required="true"
        ng-mindlength="6"
        ng-maxlength="10"
-       ng-pattern="/[A-Z]{3}[0-9]{3,7}"/>
+       ng-pattern="/[A-Z]{3}[0-9]{3,7}/"/>
     <select ng-model="car.color" ng-options="color for color in colors"></select>
     <button ng-click="park(car)" ng-disable="!car.plate || !car.color">Park</button> 
     </div>
