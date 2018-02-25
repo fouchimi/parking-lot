@@ -28,6 +28,7 @@
        </accordion>
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
+	  <input type="text" ng-model="criteria" placeholder="What are you looking for"/>     
           <table>
              <thead>
                <tr>
@@ -38,7 +39,7 @@
 	      </tr>
             </thead>
             <tbody>
-	      <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
+	      <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars | filter:criteria">
 	        <td><input type="checkbox"  ng-model="car.selected" /></td>
 		<td><span>{{car.plate}}</span></td>
 		<td><span>{{car.entrance | date }}</span></td>
