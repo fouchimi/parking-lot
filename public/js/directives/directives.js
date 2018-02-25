@@ -4,9 +4,9 @@ angular.module("parking")
      templateUrl: "../../views/alert.html",
      replace: true,
      restrict: 'EAM',
+     transclude: true,	   
      scope: {
-        topic: "=topic",
-	description: "=description",
+        topic: "@",
 	close: "&close"     
      }
    }

@@ -11,9 +11,9 @@
      <div ng-controller="parkingCtrl">
 	<alert 
 	   ng-show="showAlert"
-           topic="alertTopic"
-           description="alertMessage"
+           topic="Something went wrong!"
 	   close="closeAlert()">
+	   You must inform the plate and the color of the car!
         </alert>
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
