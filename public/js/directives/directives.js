@@ -6,7 +6,8 @@ angular.module("parking")
      restrict: 'EAM',
      scope: {
         topic: "=topic",
-	description: "=description"     
+	description: "=description",
+	close: "&close"     
      }
    }
  });

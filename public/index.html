@@ -10,8 +10,10 @@
   <body>
      <div ng-controller="parkingCtrl">
 	<alert 
+	   ng-show="showAlert"
            topic="alertTopic"
-           description="alertMessage" >
+           description="alertMessage"
+	   close="closeAlert()">
         </alert>
        <h3 ng-bind="appTitle"></h3>
        <div ng-show="cars.length > 0">
@@ -26,7 +28,7 @@
             </thead>
             <tbody>
 	      <tr ng-class="{selected: car.selected}"  ng-repeat="car in cars">
-	        <td><input type="checkbox" ng-click="select(car)"  ng-model="car.selected" /></td>
+	        <td><input type="checkbox"  ng-model="car.selected" /></td>
                 <td><span ng-bind="car.plate"></span></td>
                 <td><span ng-bind="car.entrance"></span></td>
 	        <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
