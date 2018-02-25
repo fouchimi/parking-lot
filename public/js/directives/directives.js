@@ -15,8 +15,21 @@ angular.module("parking")
     return {
       templateUrl: "../../views/accordion.html",
       restrict: "E",
-      transclude: true	    
-    }
+      transclude: true,
+      controller: function($scope, $element, $attrs, $transclude) {
+        const accordionItems = [];
+        const addAccordionItem = function(accordionScope) {
+          accordionItems.push(accordionScope);		
+	}
+	const closeAll = function() {
+	  accordionItems.forEach(accordionScope => {accordionScope.active = false });
+	}
+	return {
+	  addAccordionItem: addAccordionItem,
+          closeAll: closeAll		
+	};
+      }	    
+    };
  })
  .directive("accordionItem", function(){
     return {
@@ -28,7 +41,9 @@ angular.module("parking")
       transclude: true,
       require: '^accordion',	    
       link: function(scope, element, attrs, ctrl, transcludeFn) {
-        element.bind("click", function(){
+          ctrl.addAccordionItem(scope);
+	  element.bind("click", function(){
+          ctrl.closeAll();		  
 	  scope.$apply(function() {
 	   scope.active = !scope.active;  
 	  });
